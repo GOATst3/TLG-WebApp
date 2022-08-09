@@ -1,0 +1,9 @@
+#page-content{
+    background-color :var(--dark);
+    min-height:92vh
+}
+#policyp{
+    font-size: 10px;
+    margin: 0;
+    margin-left: 5px;
+}
