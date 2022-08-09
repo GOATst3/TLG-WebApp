@@ -18,14 +18,14 @@ const Header=(props)=>{
         <Nav variant="pills" defaultActiveKey={props.page} className={'justify-content-between'}>
             
             {/*logo*/}
-            <div className=" align-items-center">
+            <div>
                 <Nav.Item className="mx-3 align-items-center">
                     <img src={logo} alt='logo' style={{height:'60px'}}/>
                 </Nav.Item>
             </div>
 
             {/* button for offcanvas,visible only under md breakpoint */}
-            <Nav.Item className='d-md-none' onClick={()=>setShow(true)}>
+            <Nav.Item className='d-md-none m-3' onClick={()=>setShow(true)}>
                 <img src={list} style={{width:'30px'}}/>
             </Nav.Item>
 
