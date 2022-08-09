@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../../Utils/utils.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Navigate, useNavigate } from 'react-router-dom';
 
 
 export default function Modals(props) {
