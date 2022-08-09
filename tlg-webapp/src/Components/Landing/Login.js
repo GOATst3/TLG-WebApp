@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../../Utils/utils.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Navigate, useNavigate } from 'react-router-dom';
 
 
 export default function Modals(props) {
@@ -29,17 +28,27 @@ export default function Modals(props) {
     }
 
     //handling submit
-    const HandleLogin=(event)=>{
-        if(!validPassword.test(loginData.password)&&!validEmail.test(loginData.email)){
+    const HandleLogin=(e)=>{
+        const email=document.getElementById('email')
+        const password= document.getElementById('password')
+
+        if(!validPassword.test(loginData.password) && !validEmail.test(loginData.email)){
+            email.style.border = "2px solid red"
+            password.style.border = "2px solid red";
             alert('Invalid email and password')
         }
-        else if (!validEmail.test(loginData.email))alert('Invalid email')
-            else if (!validPassword.test(loginData.password))alert('Invalid password')
+        else if (!validEmail.test(loginData.email)){
+            email.style.border = "2px solid red";
+            alert('Invalid email')
+        }
+        else if (!validPassword.test(loginData.password)){
+            password.style.border = "2px solid red";
+            alert('Invalid password')
+        }
         else {
             localStorage.setItem('logged', true)
             window.location.reload()
         }
-
     }
 
     return (
@@ -62,6 +71,7 @@ export default function Modals(props) {
                 <Row className='justify-content-center mb-4'>
                     <Col sm={10}>
                         <input
+                        id='email'
                         name={'email'}
                         type={'text'}
                         placeholder={'Email'}
@@ -76,20 +86,23 @@ export default function Modals(props) {
                 <Row className='justify-content-center mb-4'>
                     <Col sm={10}>
                         <input
-                            name='password'
-                            type={'password'}
-                            placeholder={'Password'}
-                            required
-                            style={{width:'100%'}}
-                            onChange={onChangeLogin}
+                        id='password'
+                        name='password'
+                        type={'password'}
+                        placeholder={'Password'}
+                        style={{width:'100%'}}
+                        onChange={onChangeLogin}
                         />
                     </Col>
                 </Row>
 
                 {/* submit button */}
-                <Row className='justify-content-end'>
-                    <Col sm={3}>
-                        <Button onClick={HandleLogin}>Login</Button>
+                <Row className='justify-content-between'>
+                    <Col sm={3} className='d-flex justify-content-end'>
+                    <a href = '/WorkInProgress'>Forgot Password</a>
+                    </Col>
+                    <Col sm={3} className='d-flex justify-content-center'>
+                        <Button  type='button' id='submit' onClick={()=>HandleLogin()}>Login</Button>
                     </Col>
                 </Row>
 
@@ -98,7 +111,7 @@ export default function Modals(props) {
 
 
         <Modal.Footer>
-            Not registered yet? <Button onClick={ ()=>window.location.href = '/WorkInProgress'}>Signup</Button>
+            Not registered yet? <Button className='ms-5' onClick={ ()=>window.location.href = '/WorkInProgress'}>Signup</Button>
         </Modal.Footer>
         </Modal>
     );
