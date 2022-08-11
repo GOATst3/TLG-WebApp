@@ -41,7 +41,7 @@ const ContactMe = ()=>{
     const sendData=(e)=>{
         e.preventDefault()
         if (data.firstname.length<1||data.length<1||data.length<1||data.length<1){
-            alert('All field must be filled')
+            alert('every fields must be filled')
         }
         else{
             const dataJson = JSON.stringify(data)
