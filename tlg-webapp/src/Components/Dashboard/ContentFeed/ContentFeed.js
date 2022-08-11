@@ -17,6 +17,7 @@ const ContentFeed = ()=>{
     const [products,setProducts] = useState([])
     //to avoid multiple fetch
     const fetched=useRef(false)
+
     const [loading,setLoading]=useState(true)
     let wishlist=localStorage.getItem('wishlistIDs')
 
@@ -41,7 +42,6 @@ const ContentFeed = ()=>{
                 .then(res=>res.json())
                 .then(json=>{
                     setProducts(json)
-                    console.log(products);
                     setLoading(false)
                 })
             fetched.current=true
@@ -85,7 +85,7 @@ const ContentFeed = ()=>{
             <Header page='/ContentFeed'/>
             <div style={{backgroundColor:'var(--dark)', minHeight:'92vh'}} className='p-5'>
                 <Row>
-                {!loading &&
+                {
                     products.map((product,key)=>(
                         <Col md={4} key={key} className='mb-5'>
 
@@ -114,7 +114,7 @@ const ContentFeed = ()=>{
                 }
                 </Row>
                 <div className='d-flex justify-content-center'>
-                    {!loading&&<Button onClick={loadMore} style={{height:'50px',width:'150px'}}>Load More</Button>}
+                    {<Button onClick={loadMore} disabled={loading} style={{height:'50px',width:'150px'}}>Load More</Button>}
                 </div>
             </div>
         </>
