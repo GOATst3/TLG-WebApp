@@ -77,7 +77,10 @@ const ContentFeed = ()=>{
         else return 'button-none wishlist-button saved'
     }
     
-    useEffect(()=>requestContent()) //request content when page's loaded
+    useEffect(()=>{
+        requestContent()
+        if (!localStorage.getItem('wishlistIDs'))localStorage.setItem('wishlistIDs',JSON.stringify([]))
+    }) //request content when page's loaded
     
     
     return(
