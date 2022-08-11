@@ -26,7 +26,7 @@ const Header=(props)=>{
 
             {/* button for offcanvas,visible only under md breakpoint */}
             <Nav.Item className='d-md-none m-3' onClick={()=>setShow(true)}>
-                <img src={list} style={{width:'30px'}}/>
+                <img src={list} style={{width:'30px'}} alt='menu'/>
             </Nav.Item>
 
             {/* Offcanvas */}
