@@ -3,7 +3,6 @@ import Header from '../Header/Header'
 
 
 const Wishlist = ()=>{
-  const logged=localStorage.getItem('logged')
 
     return(
         <>
