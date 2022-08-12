@@ -18,9 +18,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-This is a simple `React app`, created according to requests in the [document provided](/Web%20App%20Homework.pdf).\
+This is a simple `React app`, created according to requests in the [document provided](/Web%20App%20Homework.pdf).
 
-To run the app, after cloning the repository with `git clone https://github.com/GOATst3/TLG-WebApp`, move into `tlg-webapp` directory and run the project with `npm start` if you use npm as package manager.\
+To run the app, after cloning the repository with `git clone https://github.com/GOATst3/TLG-WebApp`, move into `tlg-webapp` directory and run the project with `npm start` if you use npm as package manager.
 
 
 
