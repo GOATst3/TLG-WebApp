@@ -2,6 +2,28 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+![Image description](/tlg-webapp/src/Assets/preview.png)
+
+
+### Dependencies       
+
+    "bootstrap": "^5.2.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+
+## Description
+
+This is a simple `React app`, created according to requests in the [document provided](/Web%20App%20Homework.pdf).
+
+To run the app, after cloning the repository with `git clone https://github.com/GOATst3/TLG-WebApp`, move into `tlg-webapp` directory and run the project with `npm start` if you use npm as package manager.
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,0 +1,34 @@
+:root{
+    --dark: #282c34;
+}
+.cut-text-inline{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cut-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+.button-none{
+    border: none;
+    background-color: white;
+}
+.wishlist-button{
+    transition: all 200ms;
+}
+.wishlist-button:hover{
+    color:red
+}
+.saved{
+    color:red
+}
+.grow-on-hover:hover{
+    transform: scale(1.25);
+    transition: all 200ms;
+}

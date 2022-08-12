@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
+import WorkInProgress from './Components/WorkInProgress/WorkInProgress';
+import Landing from './Components/Landing/Landing';
+import ContentFeed from './Components/Dashboard/ContentFeed/ContentFeed';
+import ContactMe from './Components/Dashboard/ContactMe/ContactMe';
+import Wishlist from './Components/Dashboard/Wishlist/Wishlist';
 
 function App() {
+
+  const logged=localStorage.getItem('logged')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' index element={logged?<Navigate replace to='ContentFeed'/> : <Landing/>}/>
+          <Route path="WorkInProgress" element={<WorkInProgress />} />
+          <Route path='ContentFeed' element={!logged? <Navigate replace to='/'/> : <ContentFeed />} />
+          <Route path='ContactMe' element={!logged? <Navigate replace to='/'/> : <ContactMe />} />
+          <Route path='Wishlist' element={!logged? <Navigate replace to='/'/> : <Wishlist />} />
+
+
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
