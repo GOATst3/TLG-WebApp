@@ -1,0 +1,7 @@
+- name: Deploy React to GitHub Pages
+  # You may pin to the exact commit or the version.
+  # uses: bitovi/github-actions-react-to-ghp@233dcd591dc37e02617510ba4c2ec096f8ccde02
+  uses: bitovi/github-actions-react-to-ghp@v1.0.0
+  with:
+    # Specifies if this action should checkout the code
+    checkout: # optional, default is true
