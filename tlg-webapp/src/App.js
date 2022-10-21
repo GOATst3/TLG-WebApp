@@ -7,6 +7,7 @@ import ContactMe from './Components/Dashboard/ContactMe/ContactMe';
 import Wishlist from './Components/Dashboard/Wishlist/Wishlist';
 
 function App() {
+  if(!(('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0))) document.body.classList.add('not-touch-device')
 
   const logged=localStorage.getItem('logged')
   return (

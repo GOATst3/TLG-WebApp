@@ -22,13 +22,13 @@
 .wishlist-button{
     transition: all 200ms;
 }
-.wishlist-button:hover{
+.not-touch-device .wishlist-button:hover{
     color:red
 }
 .saved{
     color:red
 }
-.grow-on-hover:hover{
+.not-touch-device .grow-on-hover:hover{
     transform: scale(1.25);
     transition: all 200ms;
 }
